@@ -31,7 +31,9 @@ for f=1:length(RP)
     
     trX = stackCell(X(Model{f}.trIdx));
     trY = stackCellCell(Y(Model{f}.trIdx));
-
-    Model{f}.W = HDEd_train(trX, trY);  % train the model     
+    
+    tic
+    Model{f}.W = HDEd_train(trX, trY);  % train the model   
+    toc
 
 end
