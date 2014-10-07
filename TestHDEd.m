@@ -1,12 +1,10 @@
 function [Result, ED, R2] = TestHDEd(Model)
 
     for f = 1:length(Model)
-        
-        tic
+              
         for i=1:length(Model{f}.teX)
             tmpVA{i} = predict_HDEd(Model{f}.teX{i}, Model{f}.W, Model{f}.scale, Model{f}.res);
         end
-        toc
         
         teVA = stackCell(tmpVA);
         
